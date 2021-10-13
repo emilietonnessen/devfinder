@@ -1,0 +1,29 @@
+body {
+  font-family: 'SpaceMono Bold';
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.h1 {
+  font-family: $font-bold;
+  font-size: 2.6rem;
+  line-height: 3.8rem;
+}
+
+.h2 {
+  font-family: $font-bold;
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+}
+
+.h3 {
+  font-family: $font-regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.h4 {
+  font-family: $font-regular;
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
