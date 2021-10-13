@@ -1,0 +1,29 @@
+.layout {
+  height: 100%;
+  padding: 3.2rem 2.4rem;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  row-gap: 3.2rem;
+
+  &--dark {
+    background-color: $color-dark-grey-dark-2;
+    color: $color-white;
+  }
+
+  &--light {
+    background-color: $color-light-grey-light-2;
+    color: $color-light-grey-dark-2;
+  }
+}
+
+.search-bar {
+  background-color: $color-dark-grey-dark-1;
+  border-radius: 15px;
+  padding: 2.4rem;
+}
+
+.main {
+  background-color: $color-dark-grey-dark-1;
+  border-radius: 15px;
+  padding: 2.4rem;
+}
