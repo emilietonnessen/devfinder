@@ -7,10 +7,8 @@ interface ILayoutProps {
 }
 
 const Layout = ({ children }: ILayoutProps) => {
-  const mode = 'dark';
-
   return (
-    <div className={`layout layout--${mode}`}>
+    <div className={`layout`}>
       <Header />
       <Main>{children}</Main>
     </div>
