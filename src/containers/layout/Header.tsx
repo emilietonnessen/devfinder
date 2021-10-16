@@ -1,4 +1,4 @@
-import SearchBar from 'containers/SearchBar';
+import SearchBar from 'components/Search/SearchBar';
 import Navigation from './Navigation';
 
 const Header = () => {

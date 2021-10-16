@@ -22,20 +22,6 @@
   }
 }
 
-.search-bar {
-  border-radius: 15px;
-  padding: 2.4rem;
-
-  .dark & {
-    background-color: $color-dark-grey-dark-1;
-  }
-
-  .light & {
-    background-color: $color-white;
-    box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
-  }
-}
-
 .main {
   border-radius: 15px;
   padding: 2.4rem;
