@@ -1,0 +1,73 @@
+.layout {
+  height: 100%;
+  padding: 3.2rem 2.4rem;
+  display: grid;
+  grid-template-columns: minmax(10rem, 73rem);
+  grid-template-rows: repeat(2, max-content);
+  justify-content: center;
+  row-gap: 3.2rem;
+
+  @include responsive(mobile) {
+    padding: 14rem 9.7rem;
+  }
+
+  .dark & {
+    background-color: $color-dark-grey-dark-2;
+    color: $color-white;
+  }
+
+  .light & {
+    background-color: $color-light-grey-light-2;
+    color: $color-light-grey-dark-2;
+  }
+}
+
+.search-bar {
+  border-radius: 15px;
+  padding: 2.4rem;
+
+  .dark & {
+    background-color: $color-dark-grey-dark-1;
+  }
+
+  .light & {
+    background-color: $color-white;
+    box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+  }
+}
+
+.main {
+  border-radius: 15px;
+  padding: 2.4rem;
+  max-width: 73rem;
+
+  .dark & {
+    background-color: $color-dark-grey-dark-1;
+  }
+
+  .light & {
+    background-color: $color-white;
+    box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+
+  .light & {
+    color: $color-black;
+  }
+}

@@ -4,12 +4,18 @@ $color-light-grey-dark-2: #4b6a9b;
 $color-light-grey-dark-3: #2b3442;
 $color-light-grey-light-1: #fefefe;
 $color-light-grey-light-2: #f6f8ff;
+$color-light-box-shadow: #4660bb;
 
 $color-dark-primary: #0079ff;
 $color-dark-grey-dark-1: #1e2a47;
 $color-dark-grey-dark-2: #141d2f;
 
 $color-white: #ffffff;
+$color-black: #222731;
 
 $font-regular: 'SpaceMono Regular';
 $font-bold: 'SpaceMono Bold';
+
+$bp-mobile: 50em; //  800px
+$bp-tablet: 71.875em; // 1150px
+$bp-laptop: 90.625em; // 1450px

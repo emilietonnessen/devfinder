@@ -1,5 +1,12 @@
-const App = () => {
-  return <div className='App'>Hi</div>
-}
+import Home from 'containers/Home';
+import Layout from 'containers/layout/Layout';
 
-export default App
+const App = () => {
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
+};
+
+export default App;

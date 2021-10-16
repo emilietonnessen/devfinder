@@ -1,0 +1,31 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 16px;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  &__icon {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+
+    .dark & svg path {
+      fill: $color-white;
+    }
+
+    .light & svg g {
+      fill: $color-light-grey-dark-2;
+    }
+  }
+}
