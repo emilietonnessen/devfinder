@@ -13,10 +13,13 @@
   .light & {
     background-color: $color-white;
     box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+    color: $color-light-grey-dark-2;
   }
 
   &__icon {
-    margin-left: 1.2rem;
+    @include responsive(mobile) {
+      margin-left: 1.2rem;
+    }
   }
 
   &__input {
@@ -27,6 +30,27 @@
     font-size: 1.8rem;
     line-height: 2.5rem;
     caret-color: $color-primary;
+    background-color: transparent;
+    font-size: 1.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .light & {
+      color: $color-light-grey-dark-2;
+    }
+
+    .dark & {
+      color: $color-white;
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+
+    @include responsive(mobile) {
+      font-size: 1.8rem;
+    }
   }
 
   &__button-container {

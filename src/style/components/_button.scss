@@ -14,4 +14,9 @@
   &:focus-visible {
     background-color: $color-primary-light;
   }
+
+  &:disabled {
+    background-color: $color-primary-light;
+    cursor: not-allowed;
+  }
 }

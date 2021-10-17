@@ -2,12 +2,24 @@ import { ReactNode } from 'react';
 
 interface IButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: any;
+  type: 'submit' | 'button';
+  disabled: boolean;
 }
 
-const Button = ({ children, onClick }: IButtonProps) => {
+const Button = ({
+  children,
+  onClick,
+  type = 'button',
+  disabled,
+}: IButtonProps) => {
   return (
-    <button onClick={onClick} className='button'>
+    <button
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className='button'
+    >
       {children}
     </button>
   );
