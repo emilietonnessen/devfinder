@@ -21,7 +21,7 @@ const User = () => {
   } = useSelector((state: RootState) => state.search.user);
 
   return (
-    <section className='user'>
+    <section className='user' aria-live='polite'>
       <div className='user__image-container'>
         <img className='user__image' src={avatar_url} alt={name} />
       </div>

@@ -16,9 +16,10 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <form className='search-bar'>
+    <form role='search' className='search-bar'>
       <MagnifyingGlass className='search-bar__icon' />
       <input
+        id='search'
         className='search-bar__input'
         type='text'
         placeholder='Search GitHub username...'
@@ -31,7 +32,7 @@ const SearchBar = () => {
         {error && <span className='search-bar__error'>No results</span>}
         <Button
           disabled={loading}
-          type='button'
+          type='submit'
           onClick={() => dispatch(fetchGitHubUser(value))}
         >
           {loading ? 'loading..' : 'Search'}
