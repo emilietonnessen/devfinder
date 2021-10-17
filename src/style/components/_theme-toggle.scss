@@ -3,6 +3,19 @@
   align-items: center;
   gap: 0.8rem;
   padding: 16px;
+  cursor: pointer;
+
+  .dark &:hover,
+  .dark &:hover &__icon svg path {
+    color: rgba($color-white, 0.5);
+    fill: rgba($color-white, 0.5);
+  }
+
+  .light &:hover,
+  .light &:hover &__icon svg path {
+    color: $color-black;
+    fill: $color-black;
+  }
 
   &__checkbox {
     display: none;

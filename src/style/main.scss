@@ -6,6 +6,7 @@
 // Base
 @import './base/reset';
 @import './base/typography';
+@import './base/scrollbar';
 
 // Components
 @import './components/button';
@@ -17,4 +18,4 @@
 @import './layout/layout';
 
 // Containers
-@import './containers/home';
+@import './containers/user';
