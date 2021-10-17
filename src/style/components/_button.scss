@@ -1,0 +1,22 @@
+.button {
+  color: $color-white;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: 700;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-primary-light;
+  }
+
+  &:disabled {
+    background-color: $color-primary-light;
+    cursor: not-allowed;
+  }
+}
