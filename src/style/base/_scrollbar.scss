@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+
+  &-track {
+    background: $color-dark-grey-dark-2;
+  }
+
+  &-thumb {
+    background: $color-dark-grey-dark-1;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background: lighten($color-dark-grey-dark-1, 10);
+    }
+  }
+}
