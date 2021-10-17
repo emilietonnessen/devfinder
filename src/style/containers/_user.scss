@@ -1,25 +1,23 @@
 .user {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.user-header {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-
-  @include responsive(mobile) {
-    gap: 4rem;
-  }
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 3rem;
+  column-gap: 2rem;
 
   &__image-container {
+    grid-column: 1 / 2;
     width: 7rem;
     height: 7rem;
+    align-self: center;
 
     @include responsive(mobile) {
       width: 11.7rem;
       height: 11.7rem;
+    }
+
+    @include responsive(tablet) {
+      align-self: flex-start;
+      grid-row: 1/ 4;
     }
   }
 
@@ -28,10 +26,34 @@
     border-radius: 50%;
   }
 
-  &__text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+  &__description {
+    grid-column: 1 / 3;
+
+    @include responsive(tablet) {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+.user-header {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-self: center;
+
+  @include responsive(tablet) {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: repeat(2, max-content);
+    align-self: flex-start;
+  }
+
+  &__joined {
+    @include responsive(tablet) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
   }
 
   .light &__joined {
@@ -40,11 +62,16 @@
 }
 
 .user-score {
+  grid-column: 1 / 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   border-radius: 1.5rem;
   padding: 2rem;
+
+  @include responsive(tablet) {
+    grid-column: 2 / 3;
+  }
 
   .dark & {
     background-color: $color-dark-grey-dark-2;
@@ -83,6 +110,12 @@
 }
 
 .user-misc {
+  grid-column: 1 / 3;
+
+  @include responsive(tablet) {
+    grid-column: 2 / 3;
+  }
+
   &__list {
     list-style: none;
     display: grid;
@@ -91,6 +124,7 @@
 
     @include responsive(mobile) {
       grid-template-columns: 1fr 1fr;
+      row-gap: 2rem;
     }
   }
 
@@ -102,11 +136,16 @@
 
   &__icon {
     width: 2rem;
+
+    .dark & > * {
+      fill: $color-white;
+    }
   }
 
   &__link {
     text-decoration: none;
     color: inherit;
+    fill: inherit;
 
     &:hover,
     &:focus-visible {

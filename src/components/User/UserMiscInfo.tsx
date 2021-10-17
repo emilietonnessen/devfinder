@@ -17,7 +17,7 @@ const UserMiscInfo = ({
   company,
 }: IUserMiscInfoProps) => {
   return (
-    <ul className='user-misc__list'>
+    <ul className='user-misc user-misc__list'>
       <li className='user-misc__list-item'>
         <Location
           className={`user-misc__icon ${!location && 'user-misc__unavailable'}`}

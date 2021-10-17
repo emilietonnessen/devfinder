@@ -1,30 +1,47 @@
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
 import UserHeader from 'components/User/UserHeader';
 import UserMiscInfo from 'components/User/UserMiscInfo';
 import UserScore from 'components/User/UserScore';
-import { useSelector } from 'react-redux';
 
 const User = () => {
-  const { user } = useSelector((state: any) => state.search);
+  const {
+    avatar_url,
+    name,
+    login,
+    created_at,
+    bio,
+    public_repos,
+    followers,
+    following,
+    location,
+    blog,
+    twitter_username,
+    company,
+  } = useSelector((state: RootState) => state.search.user);
 
   return (
     <section className='user'>
+      <div className='user__image-container'>
+        <img className='user__image' src={avatar_url} alt={name} />
+      </div>
       <UserHeader
-        image={user?.avatar_url}
-        name={user?.name}
-        tagname={user?.login}
-        joined={user?.created_at}
+        image={avatar_url}
+        name={name}
+        tagname={login}
+        joined={created_at}
       />
-      {user?.bio && <p className='user__description'>{user?.bio}</p>}
+      {bio && <p className='user__description'>{bio}</p>}
       <UserScore
-        repos={user?.public_repos}
-        followers={user?.followers}
-        following={user?.following}
+        repos={public_repos}
+        followers={followers}
+        following={following}
       />
       <UserMiscInfo
-        location={user?.location}
-        website={user?.blog}
-        twitter={user?.twitter_username}
-        company={user?.company}
+        location={location}
+        website={blog}
+        twitter={twitter_username}
+        company={company}
       />
     </section>
   );
