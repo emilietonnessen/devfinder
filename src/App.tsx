@@ -1,10 +1,10 @@
-import Home from 'containers/Home';
 import Layout from 'containers/layout/Layout';
+import User from 'containers/User';
 
 const App = () => {
   return (
     <Layout>
-      <Home />
+      <User />
     </Layout>
   );
 };
