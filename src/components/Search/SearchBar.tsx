@@ -27,9 +27,14 @@ const SearchBar = () => {
 					setValue(event.currentTarget.value)
 				}
 				value={value}
+				aria-describedby='search_error'
 			/>
 			<div className='search-bar__button-container'>
-				{error && <span className='search-bar__error'>No results</span>}
+				{error && (
+					<span className='search-bar__error' id='search_error' role='alert'>
+						No results
+					</span>
+				)}
 				<Button
 					disabled={loading}
 					type='submit'

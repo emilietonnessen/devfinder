@@ -1,44 +1,50 @@
 .theme-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 16px;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 16px;
+	cursor: pointer;
 
-  .dark &:hover,
-  .dark &:hover &__icon svg path {
-    color: rgba($color-white, 0.5);
-    fill: rgba($color-white, 0.5);
-  }
+	.dark &:hover,
+	.dark &:hover &__icon svg path {
+		color: rgba($color-white, 0.5);
+		fill: rgba($color-white, 0.5);
+	}
 
-  .light &:hover,
-  .light &:hover &__icon svg path {
-    color: $color-black;
-    fill: $color-black;
-  }
+	.light &:hover,
+	.light &:hover &__icon svg path {
+		color: $color-black;
+		fill: $color-black;
+	}
 
-  &__checkbox {
-    display: none;
-  }
+	&__button {
+		background-color: transparent;
+		border: none;
+		color: inherit;
+	}
 
-  &__label {
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
+	&__checkbox {
+		display: none;
+	}
 
-  &__icon {
-    justify-self: center;
-    align-self: center;
-    display: flex;
+	&__label {
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
 
-    .dark & svg path {
-      fill: $color-white;
-    }
+	&__icon {
+		justify-self: center;
+		align-self: center;
+		display: flex;
 
-    .light & svg g {
-      fill: $color-light-grey-dark-2;
-    }
-  }
+		.dark & svg path {
+			fill: $color-white;
+		}
+
+		.light & svg g {
+			fill: $color-light-grey-dark-2;
+		}
+	}
 }
