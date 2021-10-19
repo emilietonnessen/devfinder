@@ -4,17 +4,18 @@ This is a project created by frontendmentor.io as a challenge to develop into a 
 
 ## Goals for this project to include
 
-- Unit test
-- integration test
-- e2e test - cypress
-- TypeScript
+- React + Redux
+- axios
+- Sass
+  - 7-1 file pattern
+  - Custom media queries using mixin
+  - Mobile first
+  - Responsive
+- Testing
+  - TypeScript
+  - Unit test using Jest + React Testing Library
 - A11y
-- Semantic code
+  - Keyboard accessible
+  - Error handling with aria
+  - Semantic and meaningful code
 - Good commits and git control
-
-CSS:
-
-- animations
-- transitions
-- mobile first
-- Responsiveness
