@@ -6,40 +6,40 @@ import { fetchGitHubUser } from 'store/actions/search';
 import { RootState } from 'store/store';
 
 const SearchBar = () => {
-  const [value, setValue] = useState<string>('');
-  const { loading, error } = useSelector((state: RootState) => state?.search);
-  const dispatch = useDispatch();
+	const [value, setValue] = useState<string>('');
+	const { loading, error } = useSelector((state: RootState) => state?.search);
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchGitHubUser('octocat'));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+	useEffect(() => {
+		dispatch(fetchGitHubUser('octocat'));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-  return (
-    <form role='search' className='search-bar'>
-      <MagnifyingGlass className='search-bar__icon' />
-      <input
-        id='search'
-        className='search-bar__input'
-        type='text'
-        placeholder='Search GitHub username...'
-        onChange={(event: FormEvent<HTMLInputElement>) =>
-          setValue(event.currentTarget.value)
-        }
-        value={value}
-      />
-      <div className='search-bar__button-container'>
-        {error && <span className='search-bar__error'>No results</span>}
-        <Button
-          disabled={loading}
-          type='submit'
-          onClick={() => dispatch(fetchGitHubUser(value))}
-        >
-          {loading ? 'loading..' : 'Search'}
-        </Button>
-      </div>
-    </form>
-  );
+	return (
+		<form role='search' className='search-bar'>
+			<MagnifyingGlass className='search-bar__icon' />
+			<input
+				id='search'
+				className='search-bar__input'
+				type='text'
+				placeholder='Search GitHub username...'
+				onChange={(event: FormEvent<HTMLInputElement>) =>
+					setValue(event.currentTarget.value)
+				}
+				value={value}
+			/>
+			<div className='search-bar__button-container'>
+				{error && <span className='search-bar__error'>No results</span>}
+				<Button
+					disabled={loading}
+					type='submit'
+					onClick={() => dispatch(fetchGitHubUser(value))}
+				>
+					{loading ? 'loading..' : 'Search'}
+				</Button>
+			</div>
+		</form>
+	);
 };
 
 export default SearchBar;
