@@ -1,12 +1,12 @@
-import Layout from 'containers/layout/Layout';
-import User from 'containers/User';
+import Layout from 'components/Layout/Layout';
+import User from 'components/User/User';
 
 const App = () => {
-  return (
-    <Layout>
-      <User />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<User />
+		</Layout>
+	);
 };
 
 export default App;
