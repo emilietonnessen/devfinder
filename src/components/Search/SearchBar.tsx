@@ -16,7 +16,11 @@ const SearchBar = () => {
 	}, []);
 
 	return (
-		<form role='search' className='search-bar'>
+		<form
+			role='search'
+			className='search-bar'
+			data-testid='search-bar-container'
+		>
 			<MagnifyingGlass className='search-bar__icon' />
 			<input
 				id='search'
@@ -28,6 +32,7 @@ const SearchBar = () => {
 				}
 				value={value}
 				aria-describedby='search_error'
+				data-testid='search-bar-input'
 			/>
 			<div className='search-bar__button-container'>
 				{error && (
@@ -39,6 +44,7 @@ const SearchBar = () => {
 					disabled={loading}
 					type='submit'
 					onClick={() => dispatch(fetchGitHubUser(value))}
+					testid='search-bar-submit'
 				>
 					{loading ? 'loading..' : 'Search'}
 				</Button>

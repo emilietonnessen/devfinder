@@ -8,7 +8,7 @@ interface ILayoutProps {
 
 const Layout = ({ children }: ILayoutProps) => {
 	return (
-		<div className={`layout`}>
+		<div className='layout'>
 			<Header />
 			<Main>{children}</Main>
 		</div>
