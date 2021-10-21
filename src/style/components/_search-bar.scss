@@ -1,68 +1,88 @@
 .search-bar {
-  border-radius: 1.5rem;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  gap: 1.6rem;
-  align-items: center;
+	border-radius: 1.5rem;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: max-content 1fr max-content;
+	gap: 1.6rem;
+	align-items: center;
 
-  .dark & {
-    background-color: $color-dark-grey-dark-1;
-  }
+	.dark & {
+		background-color: $color-dark-grey-dark-1;
+	}
 
-  .light & {
-    background-color: $color-white;
-    box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
-    color: $color-light-grey-dark-2;
-  }
+	.light & {
+		background-color: $color-white;
+		box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+		color: $color-light-grey-dark-2;
+	}
 
-  &__icon {
-    @include responsive(mobile) {
-      margin-left: 1.2rem;
-    }
-  }
+	@media (prefers-color-scheme: light) {
+		.light & {
+			background-color: $color-white;
+			box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+			color: $color-light-grey-dark-2;
+		}
+	}
 
-  &__input {
-    height: 100%;
-    border: none;
-    outline: none;
-    font-family: inherit;
-    font-size: 1.8rem;
-    line-height: 2.5rem;
-    caret-color: $color-primary;
-    background-color: transparent;
-    font-size: 1.3rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+	&__icon {
+		@include responsive(mobile) {
+			margin-left: 1.2rem;
+		}
+	}
 
-    .light & {
-      color: $color-light-grey-dark-2;
-    }
+	&__input {
+		height: 100%;
+		border: none;
+		outline: none;
+		font-family: inherit;
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		caret-color: $color-primary;
+		background-color: transparent;
+		font-size: 1.3rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 
-    .dark & {
-      color: $color-white;
-    }
+		.light & {
+			color: $color-light-grey-dark-2;
+		}
 
-    &::placeholder {
-      color: inherit;
-    }
+		.dark & {
+			color: $color-white;
+		}
 
-    @include responsive(mobile) {
-      font-size: 1.8rem;
-    }
-  }
+		@media (prefers-color-scheme: light) {
+			.light & {
+				color: $color-light-grey-dark-2;
+			}
+		}
 
-  &__button-container {
-    display: inline-block;
-    display: flex;
-    gap: 2.4rem;
-    align-items: center;
-  }
+		@media (prefers-color-scheme: dark) {
+			.dark & {
+				color: $color-white;
+			}
+		}
 
-  &__error {
-    color: $color-error;
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
+		&::placeholder {
+			color: inherit;
+		}
+
+		@include responsive(mobile) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__button-container {
+		display: inline-block;
+		display: flex;
+		gap: 2.4rem;
+		align-items: center;
+	}
+
+	&__error {
+		color: $color-error;
+		font-weight: 700;
+		font-size: 1.5rem;
+	}
 }

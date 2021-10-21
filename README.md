@@ -19,3 +19,6 @@ This is a project created by frontendmentor.io as a challenge to develop into a 
   - Error handling with aria
   - Semantic and meaningful code
 - Good commits and git control
+- Dark/Light mode
+  - Using local storage to store the set preference
+  - Using "prefers-color-scheme" to set the default theme

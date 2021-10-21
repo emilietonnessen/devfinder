@@ -3,40 +3,43 @@ import { ReactComponent as Sun } from 'assets/icons/icon-sun.svg';
 import { ReactComponent as Moon } from 'assets/icons/icon-moon.svg';
 
 const ThemeToggle = () => {
-	const [theme, setTheme] = useState<string | null>('');
-	const [checked, setChecked] = useState<boolean>(false);
+	const [checked, setChecked] = useState(false);
 	const body = document.querySelector('body');
-	const localTheme = localStorage.getItem('theme');
+	const localStorageTheme = localStorage.getItem('theme');
+	const isPreferredThemeDark =
+		window.matchMedia &&
+		window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const isPreferredThemeLight =
+		window.matchMedia &&
+		window.matchMedia('(prefers-color-scheme: light)').matches;
 
 	useEffect(() => {
-		if (!localTheme) {
-			localStorage.setItem('theme', 'dark');
-			body?.classList.add('dark');
+		if (isPreferredThemeDark && !localStorageTheme) {
 			setTheme('dark');
-			setChecked(false);
-		} else if (localTheme === 'light') {
-			toggleMode('light');
-			setChecked(true);
-		} else if (localTheme === 'dark') {
-			toggleMode('dark');
-			setChecked(false);
+		} else if (isPreferredThemeLight && !localStorageTheme) {
+			setTheme('light');
+		} else if (localStorageTheme === 'light') {
+			setTheme('light');
+		} else if (localStorageTheme === 'dark') {
+			setTheme('dark');
+		} else {
+			setTheme('dark');
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const toggleMode = (mode: string) => {
-		body?.classList.add(mode);
-		body?.classList.remove(mode === 'dark' ? 'light' : 'dark');
-		setTheme(mode);
-		localStorage.setItem('theme', mode);
-		setChecked(mode === 'dark' ? true : false);
+	const setTheme = (theme: string) => {
+		body?.classList.add(theme);
+		body?.classList.remove(theme === 'dark' ? 'light' : 'dark');
+		localStorage.setItem('theme', theme);
+		setChecked(theme === 'dark' ? true : false);
 	};
 
 	const onClickHandler = () => {
 		if (body?.classList.contains('light')) {
-			toggleMode('dark');
+			setTheme('dark');
 		} else {
-			toggleMode('light');
+			setTheme('light');
 		}
 	};
 
@@ -59,10 +62,10 @@ const ThemeToggle = () => {
 					data-testid='theme-toggle-checkbox'
 				/>
 				<span className='theme-toggle__label'>
-					{theme !== 'dark' ? 'dark' : 'light'}
+					{checked ? 'light' : 'dark'}
 				</span>
 				<span className='theme-toggle__icon'>
-					{theme !== 'dark' ? <Moon /> : <Sun />}
+					{checked ? <Sun /> : <Moon />}
 				</span>
 			</label>
 		</button>
