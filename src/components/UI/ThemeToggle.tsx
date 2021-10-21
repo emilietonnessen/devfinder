@@ -33,7 +33,6 @@ const ThemeToggle = () => {
 	};
 
 	const onClickHandler = () => {
-		console.log('inside');
 		if (body?.classList.contains('light')) {
 			toggleMode('dark');
 		} else {
@@ -47,6 +46,7 @@ const ThemeToggle = () => {
 				event.code.toLowerCase() === 'enter' && onClickHandler()
 			}
 			className='theme-toggle__button'
+			data-testid='theme-toggle-container'
 		>
 			<label className='theme-toggle' htmlFor='theme-toggle'>
 				<input
@@ -55,7 +55,8 @@ const ThemeToggle = () => {
 					name='theme-toggle'
 					id='theme-toggle'
 					checked={checked}
-					onClick={onClickHandler}
+					onChange={onClickHandler}
+					data-testid='theme-toggle-checkbox'
 				/>
 				<span className='theme-toggle__label'>
 					{theme !== 'dark' ? 'dark' : 'light'}

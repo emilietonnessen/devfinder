@@ -5,6 +5,7 @@ interface IButtonProps {
 	onClick?: any;
 	type: 'submit' | 'button';
 	disabled: boolean;
+	testid: string;
 }
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
 	onClick,
 	type = 'button',
 	disabled,
+	testid,
 }: IButtonProps) => {
 	return (
 		<button
@@ -19,6 +21,7 @@ const Button = ({
 			type={type}
 			onClick={onClick}
 			className='button'
+			data-testid={testid}
 		>
 			{children}
 		</button>
