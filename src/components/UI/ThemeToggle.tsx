@@ -9,7 +9,25 @@ const ThemeToggle = () => {
 	const localTheme = localStorage.getItem('theme');
 
 	useEffect(() => {
-		if (!localTheme) {
+		if (
+			window.matchMedia &&
+			window.matchMedia('(prefers-color-scheme: dark)').matches &&
+			!localTheme
+		) {
+			localStorage.setItem('theme', 'dark');
+			body?.classList.add('dark');
+			setTheme('dark');
+			setChecked(false);
+		} else if (
+			window.matchMedia &&
+			window.matchMedia('(prefers-color-scheme: light)').matches &&
+			!localTheme
+		) {
+			localStorage.setItem('theme', 'light');
+			body?.classList.add('light');
+			setTheme('light');
+			setChecked(false);
+		} else if (!localTheme) {
 			localStorage.setItem('theme', 'dark');
 			body?.classList.add('dark');
 			setTheme('dark');

@@ -1,67 +1,100 @@
 .layout {
-  min-height: 100vh;
-  padding: 3.2rem 2.4rem;
-  display: grid;
-  grid-template-columns: minmax(10rem, 73rem);
-  grid-template-rows: repeat(2, max-content);
-  justify-content: center;
-  row-gap: 3.2rem;
+	min-height: 100vh;
+	padding: 3.2rem 2.4rem;
+	display: grid;
+	grid-template-columns: minmax(10rem, 73rem);
+	grid-template-rows: repeat(2, max-content);
+	justify-content: center;
+	row-gap: 3.2rem;
 
-  @include responsive(mobile) {
-    padding: 14rem 9.7rem;
-  }
+	@include responsive(mobile) {
+		padding: 14rem 9.7rem;
+	}
 
-  .dark & {
-    background-color: $color-dark-grey-dark-2;
-    color: $color-white;
-  }
+	.dark & {
+		background-color: $color-dark-grey-dark-2;
+		color: $color-white;
+	}
 
-  .light & {
-    background-color: $color-light-grey-light-2;
-    color: $color-light-grey-dark-2;
-  }
+	.light & {
+		background-color: $color-light-grey-light-2;
+		color: $color-light-grey-dark-2;
+	}
+
+	@media (prefers-color-scheme: light) {
+		.light & {
+			background-color: $color-light-grey-light-2;
+			color: $color-light-grey-dark-2;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.dark & {
+			background-color: $color-dark-grey-dark-2;
+			color: $color-white;
+		}
+	}
 }
 
 .main {
-  border-radius: 15px;
-  padding: 2.4rem;
-  max-width: 73rem;
+	border-radius: 15px;
+	padding: 2.4rem;
+	max-width: 73rem;
 
-  @include responsive(mobile) {
-    padding: 4rem;
-  }
+	@include responsive(mobile) {
+		padding: 4rem;
+	}
 
-  @include responsive(tablet) {
-    padding: 5rem;
-  }
+	@include responsive(tablet) {
+		padding: 5rem;
+	}
 
-  .dark & {
-    background-color: $color-dark-grey-dark-1;
-  }
+	.dark & {
+		background-color: $color-dark-grey-dark-1;
+	}
 
-  .light & {
-    background-color: $color-white;
-    box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
-  }
+	.light & {
+		background-color: $color-white;
+		box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+	}
+
+	@media (prefers-color-scheme: light) {
+		.light & {
+			background-color: $color-white;
+			box-shadow: 0 16px 30px -10px rgba($color-light-box-shadow, 0.2);
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.dark & {
+			background-color: $color-dark-grey-dark-1;
+		}
+	}
 }
 
 .navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: 700;
+	font-size: 26px;
+	font-weight: 700;
 
-  .light & {
-    color: $color-black;
-  }
+	.light & {
+		color: $color-black;
+	}
+
+	@media (prefers-color-scheme: light) {
+		.light & {
+			color: $color-black;
+		}
+	}
 }
