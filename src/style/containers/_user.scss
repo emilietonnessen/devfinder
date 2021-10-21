@@ -32,6 +32,10 @@
 		@include responsive(tablet) {
 			grid-column: 2 / 3;
 		}
+
+		&--error {
+			opacity: 0.5;
+		}
 	}
 }
 
