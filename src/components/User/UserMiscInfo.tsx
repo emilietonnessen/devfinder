@@ -45,7 +45,9 @@ const UserMiscInfo = ({
 					className={`user-misc__icon ${!twitter && 'user-misc__unavailable'}`}
 				/>
 				{twitter ? (
-					<a href={`www.twitter.com/${twitter}`}>{twitter}</a>
+					<a className='user-misc__link' href={`www.twitter.com/${twitter}`}>
+						{twitter}
+					</a>
 				) : (
 					<span className='user-misc__unavailable'>Not Available</span>
 				)}
@@ -55,7 +57,10 @@ const UserMiscInfo = ({
 					className={`user-misc__icon ${!company && 'user-misc__unavailable'}`}
 				/>
 				{company ? (
-					<a href={`https://github.com/${company.replace('@', '')}`}>
+					<a
+						className='user-misc__link'
+						href={`https://github.com/${company.replace('@', '')}`}
+					>
 						{company}
 					</a>
 				) : (

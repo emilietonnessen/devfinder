@@ -188,32 +188,6 @@
 	}
 
 	&__unavailable {
-		.dark &,
-		.dark & > * {
-			color: rgba($color-white, 0.5);
-			fill: rgba($color-white, 0.5);
-		}
-
-		.light &,
-		.light & * > {
-			color: rgba($color-light-grey-dark-2, 0.5);
-			fill: rgba($color-light-grey-dark-2, 0.5);
-		}
-
-		@media (prefers-color-scheme: light) {
-			.light &,
-			.light & * > {
-				color: rgba($color-light-grey-dark-2, 0.5);
-				fill: rgba($color-light-grey-dark-2, 0.5);
-			}
-		}
-
-		@media (prefers-color-scheme: dark) {
-			.dark &,
-			.dark & > * {
-				color: rgba($color-white, 0.5);
-				fill: rgba($color-white, 0.5);
-			}
-		}
+		opacity: 0.5;
 	}
 }
