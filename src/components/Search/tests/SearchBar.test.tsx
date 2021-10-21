@@ -7,6 +7,7 @@ import { render as rtlRender, fireEvent } from '@testing-library/react';
 import SearchBar from 'components/Search/SearchBar';
 import store from 'store/store';
 import * as redux from 'react-redux';
+import { ReactElement } from 'react';
 
 const spyUseSelector = jest.spyOn(redux, 'useSelector');
 spyUseSelector.mockReturnValue({
@@ -18,7 +19,7 @@ const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
 const mockDispatchFn = jest.fn();
 useDispatchSpy.mockReturnValue(mockDispatchFn);
 
-const render = (component: any) =>
+const render = (component: ReactElement) =>
 	rtlRender(<redux.Provider store={store}>{component}</redux.Provider>);
 
 describe('<SearchBar />', () => {

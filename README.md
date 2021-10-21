@@ -13,7 +13,7 @@ This is a project created by frontendmentor.io as a challenge to develop into a 
   - Responsive
 - Testing
   - TypeScript
-  - Unit test using Jest + React Testing Library
+  - Simple unit tests using Jest + React Testing Library
 - A11y
   - Keyboard accessible
   - Error handling with aria

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface IButtonProps {
 	children: ReactNode;
-	onClick?: any;
+	onClick?: () => void;
 	type: 'submit' | 'button';
 	disabled: boolean;
 	testid: string;
