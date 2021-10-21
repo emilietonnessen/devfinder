@@ -20,6 +20,9 @@ const User = () => {
 		company,
 	} = useSelector((state: RootState) => state.search.user);
 
+	const { user } = useSelector((state: any) => state.search);
+	console.log(user);
+
 	return (
 		<section className='user' aria-live='polite' data-testid='user-container'>
 			<div className='user__image-container'>
@@ -31,7 +34,15 @@ const User = () => {
 				tagname={login}
 				joined={created_at}
 			/>
-			{bio && <p className='user__description'>{bio}</p>}
+			{
+				<p
+					className={`user__description ${
+						!bio ? 'user__description--error' : ''
+					}`}
+				>
+					{bio ? bio : 'This profile has no bio'}
+				</p>
+			}
 			<UserScore
 				repos={public_repos}
 				followers={followers}
